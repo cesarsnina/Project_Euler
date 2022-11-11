@@ -3,18 +3,20 @@
 // Find the sum of all the multiples of 3 or 5 below 1000.
 
 const multiplesOf3Or5 = (num: number) => {
+  const input = num;
   let sum = 0;
-  for (let i = 1; i <= num; i++) {
-    if (i % 5 === 0 || i % 3 === 0) {
-      sum += i;
+  while (num > 0) {
+    if (num % 5 === 0 || num % 3 === 0) {
+      sum += num;
     }
+    num--;
   }
-  console.log(sum);
+  console.log(`Input: ${input}, Output: ${sum}`);
   return sum;
 }
 
+multiplesOf3Or5(-82); // 0
 multiplesOf3Or5(4); // 3
 multiplesOf3Or5(15); // 60
-multiplesOf3Or5(44); // 450
 multiplesOf3Or5(434); // 43935
 multiplesOf3Or5(1000); // 234168
