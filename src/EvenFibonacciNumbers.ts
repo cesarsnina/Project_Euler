@@ -6,20 +6,21 @@
 // By considering the terms in the Fibonacci sequence whose values do not exceed four million,
 // find the sum of the even - valued terms.;
 
-const evenFibonacciNumbers = (term: number) => {
+const evenFibonacciNumbers = (term: number): number => {
 	const maxFibSequence = 4000000;
-	const input = term;
+	let n = term;
 	let sum = 0;
 	let a = 1;
 	let b = 2;
 
-	while (1 < term) {
+	while (1 < n) {
 		if (b > maxFibSequence) break;
 		if (b % 2 === 0) sum += b;
 		[a, b] = [b, a + b];
-		term--;
+		n--;
 	}
-	console.log(`Input: ${input}, Output: ${sum}`);
+
+	console.log(`Input: ${term}, Output: ${sum}`);
 	return sum;
 };
 
